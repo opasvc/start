@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" th:href="@{/webjars/bootstrap/5.3.1/dist/css/bootstrap.css}">
+    <link rel="stylesheet" th:href="@{/webjars/bootstrap/5.3.1/dist/css/bootstrap.min.css}">
+
+    <script th:src="@{/webjars/jquery/3.7.0/jquery.js}"></script>
+    <script th:src="@{/webjars/bootstrap/5.3.1/dist/js/bootstrap.js}"></script>
+    <script th:src="@{/webjars/bootstrap/5.3.1/dist/js/bootstrap.min.js}"></script>
+    <style>
+        /*全局选择器*/
+        * {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+    </style>
+</head>
+<body class="">
+
+<div class="left col-md-2 col-sm-2">
+    <div class="fixed-height">
+        <img src="../images/img.png" class=" img-circle row" style="height: 50px;width: 50px">
+    </div>
+    <ul class="list-group"><!--style="margin-left: 16px"-->
+        <li th:each="user : ${list}" class="pull-left"><!-- class="list-group-item caret"-->
+            <span th:text="${user.name}" th:id="${user.listId}" class="list-group-item caret row"></span>
+        </li>
+    </ul>
+</div>
+
+
+
+<script type="text/javascript" th:inline="javascript">
+    /*<![CDATA[*/
+    var list = [[${list}]];
+    for (const listKey in list) {
+        var btnId = listKey.listId = listKey
+
+    }
+    /*]]>*/
+</script>
+<!--<th:foreach th:each="btn : ${list}">-->
+<!--<script type="text/javascript">
+    $("#").click(function () {
+        alert("hello")
+    })
+</script>-->
+
+
+</body>
+</html>

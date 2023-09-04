@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" th:href="@{/webjars/bootstrap/5.3.1/dist/css/bootstrap.css}">
+    <link rel="stylesheet" th:href="@{/webjars/bootstrap/5.3.1/dist/css/bootstrap.min.css}">
+
+    <script th:src="@{/webjars/jquery/3.7.0/jquery.js}"></script>
+    <script th:src="@{/webjars/bootstrap/5.3.1/dist/js/bootstrap.js}"></script>
+    <script th:src="@{/webjars/bootstrap/5.3.1/dist/js/bootstrap.min.js}"></script>
+</head>
+<body>
+<table>
+    <tr>
+        <td>ID</td>
+        <td>NAME</td>
+        <td>AGE</td>
+    </tr>
+    <tr th:each="user : ${list}">
+        <td th:text="${user.id}"></td>
+        <td th:text="${user.name}"></td>
+        <td th:text="${user.pwd}"></td>
+    </tr>
+</table>
+<th:if test="${list!=null}">暂无数据</th:if>
+
+<!--<input type="button" value="点击" id="btn" class="btn btn-primary">-->
+<br>
+<p th:include="public/btn.html :: btn-primary"></p>
+<p th:include="public/btn.html :: btn-info"></p>
+<p th:include="public/btn.html :: btn-block"></p>
+<p th:include="public/btn.html :: btn-danger"></p>
+<p th:include="public/btn.html :: btn-close"></p>
+<p th:include="public/btn.html :: btn-group"></p>
+
+<input type="number" value="0" id="name">
+
+[[~{}]]
+
+
+<script>
+    $(".btn").click(function () {
+        a = $("#name").val();
+        b = a + 1
+        $("#name").val(b);
+    })
+
+
+</script>
+</body>
+</html>
+

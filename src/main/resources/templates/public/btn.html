@@ -1,0 +1,40 @@
+<html lang="en">
+<body>
+<!--蓝色按钮-->
+<div th:fragment="btn-primary">
+    <input value="按钮1" class="btn btn-primary" type="button">
+</div>
+<!--天蓝色按钮-->
+<div th:fragment="btn-info">
+    <input value="按钮2" class="btn btn-info" type="button">
+</div>
+<!--白色按钮-->
+<div th:fragment="btn-block">
+    <input value="按钮3" class="btn btn-block" type="button">
+</div>
+<!--红色按钮-->
+<div th:fragment="btn-danger">
+    <input value="按钮4" class="btn btn-danger" type="button">
+</div>
+
+<!--❌-->
+<div th:fragment="btn-close">
+    <input class="btn btn-close" type="button">
+</div>
+<!--白色按钮-->
+<div th:fragment="btn-group">
+    <input value="按钮6" class="btn btn-group" type="button">
+</div>
+
+
+
+<dev th:fragment="hender">
+    <link rel="stylesheet" th:href="@{/webjars/bootstrap/5.3.1/dist/css/bootstrap.css}">
+    <link rel="stylesheet" th:href="@{/webjars/bootstrap/5.3.1/dist/css/bootstrap.min.css}">
+
+    <script th:src="@{/webjars/jquery/3.7.0/jquery.js}"></script>
+    <script th:src="@{/webjars/bootstrap/5.3.1/dist/js/bootstrap.js}"></script>
+    <script th:src="@{/webjars/bootstrap/5.3.1/dist/js/bootstrap.min.js}"></script>
+</dev>
+</body>
+</html>

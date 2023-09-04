@@ -1,0 +1,25 @@
+#server:
+#  port: 8080
+#  servlet:
+#    context-path: /thymeleaf
+
+
+mybatis-plus:
+  config-location: classpath:mybatis/mybatis-config.xml
+  mapper-locations: classpath:mybatis/mapper/*.xml
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3307/student
+    username: root
+    password: 123456
+  banner:
+    location: log.txt
+#  thymeleaf:
+#    cache: false
+#    prefix: classpath:/templates/
+#    suffix: .html
+#  web:
+#    resources:
+#      static-locations: classpath:/static/
